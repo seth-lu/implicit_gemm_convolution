@@ -42,16 +42,16 @@ int main(int argc, char *argv[]){
 	int K = 16; //number of filter
 	int R = 1;
 	int S = 1;
-	int U = 1;
-	int V = 1;
+	int U = 1; //stride_h
+	int V = 1; //stride_w
 
 	int pad_h = 0;
 	int pad_w = 0;
 	
 	int dilation = 1;
 
-	int P = (H + 2*pad_h - (((R-1)*dilation) + 1) )/U + 1;
-	int Q = (W + 2*pad_w - (((S-1)*dilation) + 1) )/U + 1;
+	int P = (H + 2*pad_h - (((R-1)*dilation) + 1) )/U + 1; //output height
+	int Q = (W + 2*pad_w - (((S-1)*dilation) + 1) )/U + 1; //output width
 
 /*
 	if (argc != 12){
